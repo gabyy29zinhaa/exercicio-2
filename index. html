@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=derive-width,initial-scale=1.0">
+<title>Gaby</title>
+</head>
+<body>
+<h1>EXERCICIO 2 LISTAS</h1>
+<h2>Meus jogos favoritos</h2>
+<ol>
+<li><ins>SUPER NINTENDO </ins></li>
+<ul type="square">
+<li>Super Mario World</li>
+<li>Mortal Kombat</li>
+</ul>
+<li><mark>PLAYSTATION</mark></li>
+</ol>
+<ul>
+<li>God of War</li>
+<li>The Last of Us</li>
+</ul>
+<ol>
+<li><strong>XBOX</strong></li>
+<ol>
+</body>
+</html>
