@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=derive-width,initial-scale=1.0">
-<title>Gaby</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Velocidade</title>
+    <script>
+        function calcularMulta() {
+            let velocidadeMaxima = parseFloat(document.getElementById("velocidadeMaxima").value);
+            let velocidadeAtual = parseFloat(document.getElementById("velocidadeAtual").value);
+            let resultado = document.getElementById("resultado");
+            
+            if (!isNaN(velocidadeMaxima) && !isNaN(velocidadeAtual)) {
+                if (velocidadeAtual <= velocidadeMaxima) {
+                    resultado.textContent = "Sem multa";
+                } else {
+                    let excesso = velocidadeAtual - velocidadeMaxima;
+                    let porcentagemExcesso = (excesso / velocidadeMaxima) * 100;
+                    
+                    if (porcentagemExcesso <= 10) {
+                        resultado.textContent = "Multa de R$100,00";
+                    } else if (porcentagemExcesso <= 20) {
+                        resultado.textContent = "Multa de R$200,00";
+                    } else {
+                        resultado.textContent = "Multa de R$300,00";
+                    }
+                }
+            } else {
+                resultado.textContent = "Por favor, preencha ambos os campos com valores válidos.";
+            }
+        }
+    </script>
 </head>
 <body>
-<h1>EXERCICIO 2 LISTAS</h1>
-<h2>Meus jogos favoritos</h2>
-<ol>
-<li><ins>SUPER NINTENDO </ins></li>
-<ul type="square">
-<li>Super Mario World</li>
-<li>Mortal Kombat</li>
-</ul>
-<li><mark>PLAYSTATION</mark></li>
-</ol>
-<ul>
-<li>God of War</li>
-<li>The Last of Us</li>
-</ul>
-<ol>
-<li><strong>XBOX</strong></li>
-<ol>
+    <input type="number" id="velocidadeMaxima" placeholder="Velocidade Máxima">
+    <input type="number" id="velocidadeAtual" placeholder="Velocidade Atual">
+    <button onclick="calcularMulta()">Calcular Multa</button>
+    <p id="resultado"></p>
 </body>
 </html>
