@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radar de Velocidade</title>
+    <title>Radar</title>
     <script>
         function calcularMulta() {
-            let velocidadeMaxima = parseFloat(document.getElementById("velocidadeMaxima").value);
-            let velocidadeAtual = parseFloat(document.getElementById("velocidadeAtual").value);
+            let velocidadeMaxima = parseFloat(document.getElementById("velocidadeMáxima").value);
+            let velocidadeAtual = parseFloat(document.getElementById("velocidadePercorrida").value);
             let resultado = document.getElementById("resultado");
             
             if (!isNaN(velocidadeMaxima) && !isNaN(velocidadeAtual)) {
                 if (velocidadeAtual <= velocidadeMaxima) {
-                    resultado.textContent = "Sem multa";
+                    resultado.textContent = "Não paga multa";
                 } else {
                     let excesso = velocidadeAtual - velocidadeMaxima;
                     let porcentagemExcesso = (excesso / velocidadeMaxima) * 100;
@@ -32,8 +32,8 @@
     </script>
 </head>
 <body>
-    <input type="number" id="velocidadeMaxima" placeholder="Velocidade Máxima">
-    <input type="number" id="velocidadeAtual" placeholder="Velocidade Atual">
+    <input type="number" id="velocidadeMáxima" placeholder="Velocidade Máxima">
+    <input type="number" id="velocidadePercorrida" placeholder="Velocidade Percorrida">
     <button onclick="calcularMulta()">Calcular Multa</button>
     <p id="resultado"></p>
 </body>
